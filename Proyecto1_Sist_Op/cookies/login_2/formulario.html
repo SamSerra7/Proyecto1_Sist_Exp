@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>INTRODUCE TUS DATOS</h1>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?> " method="post">
+            <table>
+                <tr>
+                    <td class="izq">
+                        Nombre de usuario
+                    </td>
+                    <td class="der">
+                        <input type="text" name="user">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="izq">
+                        Contraseña
+                    </td>
+                    <td class="der">
+                        <input type="password" name="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" >
+                        <button class="button" type="submit" name="login"><span>LOGIN</span></button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
