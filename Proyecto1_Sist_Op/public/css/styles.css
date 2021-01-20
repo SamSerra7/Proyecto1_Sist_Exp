@@ -1,0 +1,42 @@
+body {
+    background-color: #749081;
+}
+
+h2{
+    color:#FFFFFF;
+}
+
+
+h1{
+  color:#FFFFFF;
+}
+
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+    @media (min-width: 992px){
+      .navbar li {
+          margin-left : 12em;
+          margin-right : 12em;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 7rem;  
+        background-color: #25533B;
+        color: white;
+                 /* Footer height */
+      }
+  }
