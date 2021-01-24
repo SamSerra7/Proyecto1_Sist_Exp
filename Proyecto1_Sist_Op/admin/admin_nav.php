@@ -6,40 +6,28 @@
     <title>Find Trip</title>
      <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-     <link rel="stylesheet" type="text/css" href="../public/css/styles.css">
+     
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="../index.php">FIND TRIP</a>
+    <a class="navbar-brand" href="../admin/principal.php">FIND TRIP</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            DESTINOS
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">AÑADIR</a>
-            <a class="dropdown-item" href="#">MOSTRAR</a>
-            
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            ADMINISTRADORES
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">AÑADIR</a>
-            <a class="dropdown-item" href="#">MOSTRAR</a>
-            
-          </div>
+           <li class="nav-item">
+            <a class="nav-link"  href="#">DESTINOS</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link"  href="../admin/show.php">ADMINISTRADORES</a>
+          </li>   
+          
           <li class="nav-item">
             <a class="nav-link"  href="../login/cerrar_sesion.php">CERRAR SESIÓN</a>
           </li> 
-        </li>
+        
       </ul>
     </div>
   </nav> 

@@ -1,7 +1,4 @@
-body {
-    background-color: #749081;
-}
-
+@charset "utf-8";
 h2{
     color:#FFFFFF;
 }
@@ -9,6 +6,10 @@ h2{
 
 h1{
   color:#FFFFFF;
+}
+
+body {
+  background-color: #709280 !important;
 }
 
 .column {
@@ -22,7 +23,6 @@ h1{
     display: table;
     clear: both;
   }
-
 
     @media (min-width: 992px){
       .navbar li {
@@ -40,3 +40,13 @@ h1{
                  /* Footer height */
       }
   }
+  #searchInput {
+    background-image: url('../img/search.png');
+    background-position: auto ; /* Position the search icon */
+    background-repeat: no-repeat;
+    width: 80%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    }
+
