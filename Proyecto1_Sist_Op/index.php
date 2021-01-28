@@ -1,9 +1,8 @@
 <?php 
-include("public/nav.php"); 
+
+    include("public/nav.php"); 
 
 ?>
-
-
 <html>
 
 <head>
@@ -31,13 +30,13 @@ include("public/nav.php");
                                         </ol>
                                 <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                        <img class="d-block w-100" src="public/img/cataratas.gif" alt="First slide">
+                                        <img class="d-block w-100" src="public/img/cataratas.gif" height="445" alt="First slide">
                                 </div>
                                 <div class="carousel-item">
-                                        <img class="d-block w-100" src="public/img/monteverde.jpg" alt="Second slide">
+                                        <img class="d-block w-100" src="public/img/monteverde.jpg" height="445" alt="Second slide">
                                 </div>
                                 <div class="carousel-item">
-                                        <img class="d-block w-100" src="public/img/rioceleste.jpg" alt="Third slide">
+                                        <img class="d-block w-100" src="public/img/rioceleste.jpg" height="445" alt="Third slide">
                                 </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -53,9 +52,12 @@ include("public/nav.php");
                         </div>
                 </div>
         </div>
-        <?php 
+      
+</body>
+
+
+</html>
+<?php 
         include("public/footer.php"); 
 
-        ?>
-</body>
-</html>
+?>
