@@ -22,8 +22,8 @@
             BUSCAR
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="trip/show_all.php">VER TODOS</a> 
-            <a class="dropdown-item" href="#">FILTRAR</a> 
+          <a class="dropdown-item" href="../trip/show_all.php">VER TODOS</a> 
+            <a class="dropdown-item" href="../trip/search_trip.php">FILTRAR</a> 
           </div>
         </li>
         <li class="nav-item">
