@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
            <li class="nav-item">
-            <a class="nav-link"  href="#">DESTINOS</a>
+            <a class="nav-link"  href="../admin/trip/show.php">DESTINOS</a>
           </li> 
           <li class="nav-item">
             <a class="nav-link"  href="../admin/show.php">ADMINISTRADORES</a>

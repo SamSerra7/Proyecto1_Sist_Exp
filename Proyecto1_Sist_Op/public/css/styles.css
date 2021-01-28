@@ -15,38 +15,43 @@ body {
 .column {
     float: left;
     width: 50%;
-  }
+}
   
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-    @media (min-width: 992px){
-      .navbar li {
-          margin-left : 12em;
-          margin-right : 12em;
-      }
-
-      footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 7rem;  
-        background-color: #25533B;
-        color: white;
-                 /* Footer height */
-      }
-  }
-  #searchInput {
-    background-image: url('../img/search.png');
-    background-position: auto ; /* Position the search icon */
-    background-repeat: no-repeat;
-    width: 80%;
-    font-size: 16px;
-    padding: 12px 20px 12px 40px;
-    border: 1px solid #ddd;
+@media (min-width: 992px){
+    .navbar li {
+        margin-left : 12em;
+        margin-right : 12em;
     }
 
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 7rem;  
+      background-color: #25533B;
+      color: white;
+                /* Footer height */
+    }
+}
+#searchInput {
+  background-image: url('../img/search.png');
+  background-position: auto ; /* Position the search icon */
+  background-repeat: no-repeat;
+  width: 80%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+}
+
+.thumb-img{
+  width: 5em;
+  height: 5em;
+  border-radius: 5px;
+}
