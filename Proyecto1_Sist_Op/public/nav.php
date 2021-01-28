@@ -22,7 +22,7 @@
             BUSCAR
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="product/show_all.php">VER TODOS</a> 
+          <a class="dropdown-item" href="trip/show_all.php">VER TODOS</a> 
             <a class="dropdown-item" href="#">FILTRAR</a> 
           </div>
         </li>

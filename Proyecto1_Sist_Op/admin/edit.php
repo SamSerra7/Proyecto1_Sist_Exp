@@ -34,22 +34,22 @@ include("admin_nav.php");
                             <br>
                             <form action="../controller/edit_user.php" method="post">
                             <div class="form-group">
-                                    <input type="hidden" class="form-control"name="id" value=" <?php echo $_GET["id"] ?> "> 
+                                    <input type="hidden" class="form-control"name="id" value="<?php echo $_GET["id"] ?>"> 
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Nombre" name="name" value=" <?php echo $_GET["name"] ?> ">
+                                    <input type="text" class="form-control" placeholder="Nombre" name="name" value="<?php echo $_GET["name"] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Apellidos" name="lastname" value=" <?php echo $_GET["lastname"] ?> ">  
+                                    <input type="text" class="form-control" placeholder="Apellidos" name="lastname" value="<?php echo $_GET["lastname"] ?>">  
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Usuario" name="username" value=" <?php echo $_GET["username"] ?> ">  
+                                    <input type="text" class="form-control" placeholder="Usuario" name="username" value="<?php echo $_GET["username"] ?>">  
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Correo electrónico" name="email" value=" <?php echo $_GET["email"] ?> ">  
+                                    <input type="text" class="form-control" placeholder="Correo electrónico" name="email" value="<?php echo $_GET["email"] ?>">  
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Contraseña" name="password" value=" <?php echo $_GET["phone"] ?> ">
+                                    <input type="text" class="form-control" placeholder="Contraseña" name="password" value="<?php echo $_GET["phone"] ?>">
                                 </div>
                                 <button type="submit" class="btn btn-light">Modificar</button>
                             </form>
