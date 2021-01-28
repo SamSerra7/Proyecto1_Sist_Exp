@@ -33,7 +33,7 @@ include("admin_nav.php");
                                 <br>
                         </div>
                         <?php
-                        include_once '../app/config.php';
+                        include_once '../configuration/config.php';
                         $query = $pdo->prepare("SELECT * FROM `users` ");
                         $query->execute();
                         $users = $query->fetchAll(PDO::FETCH_ASSOC);      

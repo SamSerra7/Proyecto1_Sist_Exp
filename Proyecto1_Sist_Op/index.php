@@ -1,5 +1,5 @@
 <?php 
-include("nav.php"); 
+include("public/nav.php"); 
 
 ?>
 
@@ -54,7 +54,7 @@ include("nav.php");
                 </div>
         </div>
         <?php 
-        include("footer.php"); 
+        include("public/footer.php"); 
 
         ?>
 </body>

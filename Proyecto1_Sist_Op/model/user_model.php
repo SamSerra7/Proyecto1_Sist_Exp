@@ -6,7 +6,7 @@
         
         public function add_user($name, $lastname, $username, $email, $password){
             try{
-                require_once '../app/config.php';
+                require_once '../configuration/config.php';
                 $sql = "INSERT INTO users (name, lastname, username, email, password) VALUES (?,?,?,?,?)";
                 $query= $pdo->prepare($sql);
                 $query->execute([$name, $lastname, $username, $email, $password]);
@@ -20,7 +20,7 @@
         
         public function delete_user($id){
           
-            require_once '../app/config.php';
+            require_once '../configuration/config.php';
             $sql = 'DELETE FROM users '
                 . 'WHERE id = :id';
 
@@ -40,7 +40,7 @@
         
         public function edit_user($id, $name, $lastname, $username, $email, $password){
 
-            require_once '../app/config.php';
+            require_once '../configuration/config.php';
             $sql = "UPDATE users SET name=?, lastname=?, username=?, email=?, password=? WHERE id=?";
             $stmt= $pdo->prepare($sql);
             $stmt->execute([$name, $lastname, $username, $email, $password, $id]);

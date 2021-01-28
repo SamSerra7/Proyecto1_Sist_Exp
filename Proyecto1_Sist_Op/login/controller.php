@@ -1,5 +1,5 @@
 <?php
-include_once '../app/config.php';
+include_once '../configuration/config.php';
 session_start();
 
 $admin = $_POST['admin'];

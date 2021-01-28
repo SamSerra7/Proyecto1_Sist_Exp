@@ -1,7 +1,7 @@
 
 <?php 
 
-include("../nav.php"); 
+include("../public/nav.php"); 
 ?>
 
 <html>
