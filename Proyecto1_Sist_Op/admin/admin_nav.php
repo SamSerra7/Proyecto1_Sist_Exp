@@ -17,15 +17,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-           <li class="nav-item">
+      <li class="nav-item">
             <a class="nav-link"  href="../admin/trip/show.php">DESTINOS</a>
           </li> 
           <li class="nav-item">
-            <a class="nav-link"  href="../admin/show.php">ADMINISTRADORES</a>
+            <a class="nav-link"  href="../../admin/show.php">ADMINISTRADORES</a>
           </li>   
           
           <li class="nav-item">
-            <a class="nav-link"  href="../login/cerrar_sesion.php">CERRAR SESIÓN</a>
+            <a class="nav-link"  href="../../login/cerrar_sesion.php">CERRAR SESIÓN</a>
           </li> 
         
       </ul>
