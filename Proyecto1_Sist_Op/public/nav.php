@@ -27,7 +27,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  href="#">CRÉDITOS</a>
+          <a class="nav-link"  href="../trip/credits.php">CRÉDITOS</a>
         </li> 
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="#">INICIAR SESIÓN</a>

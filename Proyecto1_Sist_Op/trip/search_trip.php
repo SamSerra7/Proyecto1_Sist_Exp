@@ -14,7 +14,7 @@ include("../public/nav.php");
 </head>
 
 <body>
-    <div>
+    <div style="padding-top: 1%;padding-left: 1%">
         <a href="../index.php" style="color: white;">
             << Volver al inicio</a>
     </div>
@@ -87,7 +87,7 @@ include("../public/nav.php");
 
 
                         </p>
-                        <button class="btn btn-primary centradobtn" name="btnAction" value="Agregar" type="submit">
+                        <button class="btn btn-primary centradobtn" name="btnAction" value="Agregar" type="submit" data-toggle="modal" data-target="#tripModal">
                             Visitar
                         </button>
                     </div>
@@ -128,7 +128,7 @@ include("../public/nav.php");
 
 
                         </p>
-                        <button class="btn btn-primary centradobtn" name="btnAction" value="Agregar" type="submit">
+                        <button class="btn btn-primary centradobtn" name="btnAction" value="Agregar" type="submit" data-toggle="modal" data-target="#tripModal">
                             Visitar
                         </button>
                     </div>
@@ -169,7 +169,7 @@ include("../public/nav.php");
 
 
                         </p>
-                        <button class="btn btn-primary centradobtn" name="btnAction" value="Agregar" type="submit">
+                        <button class="btn btn-primary centradobtn" name="btnAction" value="Agregar" type="submit" data-toggle="modal" data-target="#tripModal">
                             Visitar
                         </button>
                     </div>
@@ -177,10 +177,104 @@ include("../public/nav.php");
             </div>
         </div>
     </div>
-    <?php include("../public/footer.php");?>
+    <?php include("../public/footer.php"); ?>
+
+    <!-- Modal -->
+    <div class="modal fade" id="tripModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document" id="mdialTamanio">
+            <div class="modal-content prueba">
+                <div class="modal-body">
+                    <h4 align="center"><b>Wyndham Tamarindo</b></h4>
+                    <div>
+                        <div class="col-md-12 ">
+
+                            <div id="carouselExampleIndicators" class="carousel slide d" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img class="d-block w-100" src="../public/img/imagen2.jpg" height="445" ; alt="First slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="../public/img/imagen1.webp" height="445" alt="Second slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="../public/img/imagen3.jpg" height="445" alt="Third slide">
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="row infoColor">
+                        <br>
+
+                        <div class="col-md-6 ">
+
+                            <h6> <b>Ubicacion: </b> Tamarindo, Guanacaste </h6> <br>
+                            <h6> <b>Tipo de turismo: </b> Descanso </h6> <br>
+                            <h6> <b>Check in: </b> 15:00 </h6> <br>
+                            <h6> <b>Check out: </b> 11:00 </h6> <br>
+                            <h6> <b>Valor de estacionamiento </b> Gratuito </h6> <br>
+                            <h6> <b>Contacto </b> 800 854 78544 </h6>
+
+                        </div>
+
+                        <div class="col-md-6 ">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.5131950692776!2d-85.83654928465401!3d10.300751270608483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f9e39389fe3de05%3A0xe2b5bc0c363402ad!2sWyndham%20Tamarindo!5e0!3m2!1ses!2scr!4v1611817123397!5m2!1ses!2scr" width="400" height="300" frameborder="5" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+                            </iframe>
+                        </div>
+
+
+
+                        <div class="col-md-12 ">
+                            <br>
+                            <hr>
+
+                            <h5 align="left"><b>Descripción</b></h5>
+
+                            <div class="infoColor">
+                                <h6 style=>
+                                    Toma un descanso en nuestro tranquilo hotel Wyndham Tamarindo cerca de la bahía de Tamarindo,
+                                    a lo largo de la costa norte del Pacífico en Costa Rica. Ubicado en uno de los rincones más
+                                    hermosos de Centroamérica, somos un oasis tropical, que ofrece una belleza natural, un alojamiento
+                                    elegante y un servicio de primer nivel. Relájate en nuestro spa con un tratamiento exclusivo,
+                                    descansa en la piscina infinita con un coctel del bar de la piscina o mantente en forma en
+                                    nuestro gimnasio. Vista, nuestro restaurante frente al mar, es el lugar perfecto para tomar
+                                    desayuno, almorzar y cenar.
+                                </h6>
+                            </div>
+                        </div>
+                        <video class="video" controls max-width=600px height=auto>
+                            <source src="../public/video/Paisaje.mp4" type="video/mp4">
+                            <source src="../public/video/Paisaje.ogg" type="video/ogg">
+                            Your browser does not support the video tag.
+                        </video>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- End modal -->
 </body>
 <script>
-    $('[name="carlist"]').change(function() {
+    $('[name="type]').change(function() {
         $(this).closest('form').submit();
     });
 </script>
@@ -246,5 +340,37 @@ include("../public/nav.php");
         margin: 3%;
         text-align: center;
     }
+
+    .mdialTamanio {
+        width: 100% !important;
+        background-color: #25533B;
+    }
+
+    .prueba {
+        background-color: #709280;
+    }
+
+    .infoColor {
+        background-color: #FFFFFF;
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    video {
+        width: 100%;
+        padding: 20px;
+    }
+
+    iframe {
+        width: 100%;
+    }
+
+    #carouselExampleIndicators {
+
+        width: 100%;
+        height: 500px;
+        padding: 20px;
+    }
 </style>
+
 </html>

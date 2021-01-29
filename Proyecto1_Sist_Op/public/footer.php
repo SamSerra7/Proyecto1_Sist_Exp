@@ -29,7 +29,7 @@
 <style>
         .footer {
                 margin-top: 1%;
-                position: relative;
+                position: static;
                 left: 0;
                 bottom: 0;
                 width: 100%;
