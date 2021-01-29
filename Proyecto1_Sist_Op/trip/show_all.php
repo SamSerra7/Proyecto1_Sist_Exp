@@ -536,7 +536,7 @@ include("../public/footer.php");
 
 
 <!-- Modal -->
-<div class="modal fade" id="tripModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="tripModal"  aria-labelledby="triplabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document" id="mdialTamanio">
         <div class="modal-content prueba">
             <div class="modal-body">

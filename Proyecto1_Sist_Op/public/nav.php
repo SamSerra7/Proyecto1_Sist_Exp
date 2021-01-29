@@ -83,9 +83,18 @@
   $('#btn_iniciar').click(function(){
     var admin = $('#user').val();
     var pass = $('#password').val();
-    var url='login/controller.php';
+    var url='login/controller.php'
+    var url2='../login/controller.php'
+   
+   
     $.post(url, {admin:admin, pass:pass}, function(data){
-      $('#response').html(data);
-    });
+        $('#response').html(data);
+    }).catch(e => {
+
+        $.post(url2, {admin:admin, pass:pass}, function(data){
+          $('#response').html(data);
+        }); 
+    })
+    
   });
 </script>
