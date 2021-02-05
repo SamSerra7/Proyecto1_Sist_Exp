@@ -11,7 +11,7 @@
                 $query= $pdo->prepare($sql);
                 $query->execute([$name, $lastname, $username, $email, $password]);
 
-                header("Location:../admin/show.php");
+                header("Location:../admin/admin/show.php");
             } 
             catch (Exception $e) {
                 die("Error: " . $e->getMessage());
@@ -45,6 +45,6 @@
             $stmt= $pdo->prepare($sql);
             $stmt->execute([$name, $lastname, $username, $email, $password, $id]);
             
-            header("Location:../admin/show.php");
+            header("Location:../admin/admin/show.php");
         }
     }

@@ -3,10 +3,10 @@ session_start();
 
 
 if(!isset($_SESSION['admin_session'])){
-    header('Location: '.'../index.php');
+    header('Location: '.'../../../index.php');
 }
 
-include("admin_nav.php"); 
+include("../admin_nav.php"); 
 ?>
 
 <html>
@@ -15,7 +15,7 @@ include("admin_nav.php");
 
         <meta content="text/html; charset=UTF-8" http-equiv="content-type">
         <title>Find Trip</title>
-        <link rel="stylesheet" type="text/css" href="../public/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="../../public/css/styles.css">
 
 
 
@@ -24,7 +24,7 @@ include("admin_nav.php");
 <body>
         <br>
         <div class="container">
-        <a href="../admin/principal.php" style="color: white;"><< Volver al inicio</a>
+        <a href="../../admin/principal.php" style="color: white;"><< Volver al inicio</a>
                 <div class="row">
                         <div class="column">
                                 <br>
@@ -33,7 +33,7 @@ include("admin_nav.php");
                                 <br>
                         </div>
                         <?php
-                        include_once '../configuration/config.php';
+                        include_once '../../configuration/config.php';
                         $query = $pdo->prepare("SELECT * FROM `users` ");
                         $query->execute();
                         $users = $query->fetchAll(PDO::FETCH_ASSOC);      
@@ -75,11 +75,11 @@ include("admin_nav.php");
                                 username=<?php echo $user['username'] ?>&
                                 email=<?php echo $user['email'] ?>&
                                 phone=<?php echo $user['password'] ?>
-                                "><img src="../public/img/edit.png"></a></td>
+                                "><img src="../../public/img/edit.png"></a></td>
                                 <td><a id="link" class="open-my-modal" data-toggle="modal" data-target="#exampleModal"
                                 data-id="<?php echo $user['id']?>"  
                                 data-name="<?php echo $user['name']." ".$user['lastname'] ?>" 
-                                data-email="<?php echo $user['email'] ?>" href="#exampleModal"><img src="../public/img/delete.png"></a></td>
+                                data-email="<?php echo $user['email'] ?>" href="#exampleModal"><img src="../../public/img/delete.png"></a></td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
@@ -169,7 +169,7 @@ $(document).ready(function () {
 <script>
   $('#btn_delete').click(function(){
     var id = $('#idUser').text();
-    var url='../controller/delete_user.php';
+    var url='../../controller/delete_user.php';
     $.post(url, {id:id}, function(data){
       $('#response').html(data);
     });

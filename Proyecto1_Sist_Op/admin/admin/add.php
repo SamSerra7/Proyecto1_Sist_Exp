@@ -3,10 +3,10 @@ session_start();
 
 
 if(!isset($_SESSION['admin_session'])){
-    header('Location: '.'../index.php');
+    header('Location: '.'../../../index.php');
 }
 
-include("admin_nav.php"); 
+include("../admin_nav.php"); 
 ?>
 
 
@@ -16,7 +16,7 @@ include("admin_nav.php");
 
         <meta content="text/html; charset=UTF-8" http-equiv="content-type">
         <title>Find Trip</title>
-        <link rel="stylesheet" type="text/css" href="../public/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="../../public/css/styles.css">
 
 
 
@@ -32,7 +32,7 @@ include("admin_nav.php");
                             <br>
                             <h2>Ingresar Administrador</h2>
                             <br>
-                            <form action="../controller/add_user.php" method="post">
+                            <form action="../../controller/add_user.php" method="post">
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Nombre" name="name">  
                                 </div>
