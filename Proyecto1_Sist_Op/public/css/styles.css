@@ -55,3 +55,53 @@ body {
   height: 5em;
   border-radius: 5px;
 }
+
+.cardDestino {
+  height: 500px;
+  width: 350px;
+}
+.imgDestino {
+  height: 250px;
+  width: 350px;
+}
+
+.centradobtn {
+  width: 110px; 
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background-color: #25533B;
+  border-color:#25533B
+}
+
+.mdialTamanio{
+  width: 100% !important;
+  background-color: #25533B;
+}
+
+.prueba {
+  background-color: #709280;
+}
+
+.infoColor{
+  background-color: #FFFFFF;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+video{
+  width:100%;
+  padding: 20px;
+}
+
+iframe
+{
+  width:100%;
+}
+
+#carouselExampleIndicators{
+
+  width:100%;
+  height:500px;
+  padding: 20px;
+}
+
