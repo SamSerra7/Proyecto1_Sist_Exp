@@ -88,11 +88,11 @@ include("../public/nav.php");
                         </div>    
                     </div>
                     </div>
-                    <?php } ?> 
+                    <?php } ?>  
                 </div>
-                </div>
-               
+                </div> 
             </div>
+            
 
 </body>
 <?php 
@@ -172,11 +172,8 @@ include("../public/footer.php");
                             </h6>
                         </div>
                     </div>
-                    <video class="video" controls max-width=600px height=auto>
-                                    <source src="../public/video/Paisaje.mp4" type="video/mp4">
-                                    <source src="../public/video/Paisaje.ogg" type="video/ogg">
-                                    Your browser does not support the video tag.
-                    </video>           
+                    <iframe id="video" width="400" height="300" frameborder="5" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+                        </iframe>  
                         
                 </div>
             </div>
