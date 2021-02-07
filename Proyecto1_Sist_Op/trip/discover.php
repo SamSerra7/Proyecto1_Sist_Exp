@@ -35,7 +35,7 @@ include("../public/nav.php");
                     </select>
                     <br>
                     <select name="staying">
-                        <option value="1">Visita rápida</option>
+                        <option value="1">Visita Rápida</option>
                         <option value="2">Visita Larga</option>
                     </select>
                     <br>
@@ -73,7 +73,7 @@ include("../public/nav.php");
                                     </div>
                                     <div class="col-6">
                                         <h6 align="center"> <b>Categoria:  </b>  </h6> 
-                                        <h6 align="center"><?php echo  $trip['tourism_type_id']?></h6>
+                                        <h6 align="center"><?php echo  $trip['tourism']?></h6>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -97,7 +97,12 @@ include("../public/nav.php");
                                                 data-id="<?php echo $trip['tripId']?>"  
                                                 data-name="<?php echo  $trip['name']?>"
                                                 data-location="<?php echo  $trip['direction']?>"
-                                                data-staying="<?php echo  $trip['staying']?>"  
+                                                data-staying="<?php if($trip['staying']==1){
+                                                        echo 'Visita rápida';
+                                                    }
+                                                        else{
+                                                        echo 'Visita larga';
+                                                    } ?>" 
                                                 data-phone="<?php echo  $trip['phone']?>"
                                                 data-img="<?php echo  $trip['img']?>"
                                                 data-img2="<?php echo  $trip['img2']?>"

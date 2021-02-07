@@ -17,10 +17,6 @@ function estimation(){
     //Variable a predecir
     $tourist_type;
     $discover_type;
-    $trips;
-
-    //Variable para mostrar las probabilidades de todas las clases
-    $class_results = '';
     
     //Clases (vj)
     $classes = array(0 => 1, 1 => 2, 2 => 3, 3 => 4 ); //1 = Descanso, 2 = Gastronomico, 3 = Aventura, 4 = Didactico
@@ -29,6 +25,7 @@ function estimation(){
     $iteration;
     $probability = 0;
     $lower_probability = 0;
+    $trips;
 
     //En el siguiente ciclo obtengo las probabilidades de E' (todos los atibutos dados en el form) para cada una de las clases vj.
     //En cada iteracion compara y establece el mayor numero a $probability
@@ -45,8 +42,6 @@ function estimation(){
         //Obtiene la salida y la asigna a $iteracion  
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);   
         $iteration = $result[0]['average'];
-        
-        $class_results = $class_results."$classes[$i] : $iteration<br>";
     
         //Compara y establece el mayor a $probability
         if(($iteration < $lower_probability) or $i==0){
@@ -72,7 +67,7 @@ function estimation(){
         }
     }
 
-    $stmt = $pdo->prepare("SELECT * FROM trip WHERE tourism_type_id = $discover_type");
+    $stmt = $pdo->prepare("SELECT * FROM trip, tourism_type WHERE trip.tourism_type_id = $discover_type AND tourism_type.tourism_type_id = trip.tourism_type_id");
     $stmt->execute();
     $trips = $stmt->fetchAll(PDO::FETCH_ASSOC);    
         

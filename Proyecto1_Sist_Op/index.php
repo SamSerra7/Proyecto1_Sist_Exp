@@ -19,7 +19,9 @@
                 <div class="row">
                         <div class="column">
                                 <h2>FIND TRIP, ES LA MEJOR OPCIÓN CUANDO DE BUSCAR DESTINOS TURÍSTICOS SE TRATA</h2>
-                
+                                <br>
+                                <br>
+                                <button type="button" class="btn btn-light" onclick="window.location.href='trip/discover.php'" >DESCUBRIR</button>
                         </div>
                         <div class="column">
                                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
