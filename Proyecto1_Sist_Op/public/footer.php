@@ -26,16 +26,3 @@
                 <!-- Grid container -->
         </footer>
 </body>
-<style>
-        .footer {
-                margin-top: 1%;
-                position: static;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                background-color: #25533B;
-                color: white;
-                text-align: center;
-                padding-top: 1%;
-        }
-</style>

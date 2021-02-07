@@ -54,10 +54,8 @@
         </div>
       
 </body>
-
-
-</html>
 <?php 
         include("public/footer.php"); 
 
 ?>
+</html>

@@ -2,43 +2,68 @@
 
 include("../public/nav.php");
 ?>
+
 <html>
+
 <head>
 
-        <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-        <title>Find Trip</title>
-        <link rel="stylesheet" type="text/css" href="/../public/css/styles.css">
-
-
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title>Find Trip</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/styles.css">
 
 </head>
 
 <body>
-<br>
-    <div class="container">
-        <a href="../index.php" style="color: white;"><< Volver al inicio</a>
-            <div class="row">
-                <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <?php
-                        include_once '../configuration/config.php';
-                        $query = $pdo->prepare("SELECT * FROM `trip` ");
-                        $query->execute();
-                        $trips = $query->fetchAll(PDO::FETCH_ASSOC);      
-                        
-                    ?>
-                    <?php 
-                        foreach($trips as $trip){        
-                    ?>
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" >
-                    <div class="card cardDestino">
-                        <img
-                            title="Best Western Jaco Beach All Inclusive Resort"
-                            alt="Titulo"
-                            class="card-img-top imgDestino"
-                            src="<?php echo  $trip['img']?>" 
-                            alt="Imagen del destino"
-                        >
-                        <div class="card-body" >
+    <div style="padding-top: 1%;padding-left: 1%">
+        <a href="../index.php" style="color: white;">
+            << Volver al inicio</a>
+    </div>
+    <div class="header">
+        <div class="one">
+            <div class="container selects">
+                <h3 class="searchFont">Búsqueda por criterios</h3>
+                <br>
+                <form name="final" action="../../controller/discover_trip.php" method="post">
+                    <select name="direction">
+                        <option value="Guanacaste">Guanacaste</option>
+                        <option value="Puntarenas">Puntarenas</option>
+                        <option value="Limón">Limón</option>
+                        <option value="Heredia">Heredia</option>
+                        <option value="Alajuela">Alajuela</option>
+                        <option value="San José">San José</option>
+                        <option value="Cartago">Cartago</option>
+                    </select>
+                    <br>
+                    <select name="staying">
+                        <option value="1">Visita rápida</option>
+                        <option value="2">Visita Larga</option>
+                    </select>
+                    <br>
+                    <select name="access">
+                        <option value="Fácil">Fácil</option>
+                        <option value="Regular">Regular</option>
+                        <option value="Difícil">Difícil</option>
+                    </select>
+                    <div class="form-group">
+                        <input value="DESCUBRIR" type="submit" name="submit" style= "width: 30%; margin: 1%;">
+                </div>
+                </form>
+            </div>
+        </div> 
+        <div class="two">
+            <div class="container">
+                <h3 class="resultsFont"><?php if(isset($tourist_type)){echo $tourist_type;} ?></h3>
+            </div>
+            <?php 
+                if(isset($trips)){
+                    ?><h6>Descubre los siguientes lugares...</h6><?php
+                    foreach($trips as $trip){        
+            ?>
+            <br>
+            <div class="card">
+                <div class="card-horizontal">
+                    <img title=<?php echo  $trip['name']?> alt="Titulo" class="card-img-top imgDestino" src=<?php echo  $trip['img']?>>
+                    <div class="card-body" >
                         <h5 align="center" class="card-title"> <b><?php echo  $trip['name']?></b></h5>
                             <p class="card-text">
                                 <div class="row">
@@ -87,21 +112,14 @@ include("../public/nav.php");
                             </a>
                         </div>    
                     </div>
-                    </div>
-                    <?php } ?>  
                 </div>
-                </div> 
+            <?php } } ?>  
             </div>
-            
+            <br>
+        </div>
+    </div>
 
-</body>
-<?php 
-
-include("../public/footer.php"); 
-?>
-
-
-<!-- Modal -->
+    <!-- Modal -->
 <div class="modal fade" id="tripModal"  aria-labelledby="triplabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document" id="mdialTamanio">
         <div class="modal-content prueba">
@@ -182,7 +200,9 @@ include("../public/footer.php");
     </div>
 </div>
         <!-- End modal -->
-</html>
+</body>
+
+
 <script>
 $(document).ready(function () {             
     $('.open-my-modal').click(function(){

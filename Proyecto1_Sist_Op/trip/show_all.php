@@ -29,71 +29,70 @@ include("../public/nav.php");
                     <?php 
                         foreach($trips as $trip){        
                     ?>
+                    <br>
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4" >
-                    <div class="card cardDestino">
-                        <img
-                            title="Best Western Jaco Beach All Inclusive Resort"
-                            alt="Titulo"
-                            class="card-img-top imgDestino"
-                            src="<?php echo  $trip['img']?>" 
-                            alt="Imagen del destino"
-                        >
-                        <div class="card-body" >
-                        <h5 align="center" class="card-title"> <b><?php echo  $trip['name']?></b></h5>
-                            <p class="card-text">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h6 align="center"> <b>Ubicacion: </b></h6>
-                                        <h6 align="center"><?php echo  $trip['direction']?></h6>
-                                    </div>
-                                    <div class="col-6">
-                                        <h6 align="center"> <b>Categoria:  </b>  </h6> 
-                                        <h6 align="center"><?php echo  $trip['tourism_type_id']?></h6>
-                                    </div>
-                                </div>
-                                <div class="row">
+                        <div class="card cardDestino">
+                            <img
+                                title="<?php echo  $trip['name']?>"
+                                alt="Titulo"
+                                class="card-img-top imgDestino"
+                                src="<?php echo  $trip['img']?>" 
+                                alt="Imagen del destino"
+                            >
+                            <div class="card-body" >
+                                <h5 align="center" class="card-title"> <b><?php echo  $trip['name']?></b></h5>
+                                <p class="card-text">
+                                    <div class="row">
                                         <div class="col-6">
-                                            <h6 align="center"> <b>Acceso: </b> </h6>
-                                            <h6 align="center"><?php echo  $trip['access']?></h6>
+                                            <h6 align="center"> <b>Ubicacion: </b></h6>
+                                            <h6 align="center"><?php echo  $trip['direction']?></h6>
                                         </div>
-                                    <div class="col-6">
-                                        <h6 align="center"> <b>Precio: </b> </h6>
-                                        <h6 align="center"><?php echo  $trip['price']?></h6>
-                                    
+                                        <div class="col-6">
+                                            <h6 align="center"> <b>Categoria:  </b>  </h6> 
+                                            <h6 align="center"><?php echo  $trip['tourism_type_id']?></h6>
+                                        </div>
                                     </div>
-                                </div>  
-                            </p>
-                            <a id="link" style="transform: translateX(-50%); margin-left: 50%;" class="open-my-modal
-                                                name="btnAction"
-                                                value="Agregar"
-                                                type="submit"
-                                                data-toggle="modal" 
-                                                data-target="#tripModal"
-                                                data-id="<?php echo $trip['tripId']?>"  
-                                                data-name="<?php echo  $trip['name']?>"
-                                                data-location="<?php echo  $trip['direction']?>"
-                                                data-staying="<?php echo  $trip['staying']?>"  
-                                                data-phone="<?php echo  $trip['phone']?>"
-                                                data-img="<?php echo  $trip['img']?>"
-                                                data-img2="<?php echo  $trip['img2']?>"
-                                                data-img3="<?php echo  $trip['img3']?>"
-                                                data-video="<?php echo  $trip['video']?>"
-                                                data-description="<?php echo  $trip['description']?>"
-                                                data-maps="<?php echo  $trip['maps_link']?>"
+                                    <div class="row">
+                                            <div class="col-6">
+                                                <h6 align="center"> <b>Acceso: </b> </h6>
+                                                <h6 align="center"><?php echo  $trip['access']?></h6>
+                                            </div>
+                                        <div class="col-6">
+                                            <h6 align="center"> <b>Precio: </b> </h6>
+                                            <h6 align="center"><?php echo  $trip['price']?></h6>
+                                        
+                                        </div>
+                                    </div>  
+                                </p>
+                                <a id="link" style="transform: translateX(-50%); margin-left: 50%;" class="open-my-modal
+                                                    name="btnAction"
+                                                    value="Agregar"
+                                                    type="submit"
+                                                    data-toggle="modal" 
+                                                    data-target="#tripModal"
+                                                    data-id="<?php echo $trip['tripId']?>"  
+                                                    data-name="<?php echo  $trip['name']?>"
+                                                    data-location="<?php echo  $trip['direction']?>"
+                                                    data-staying="<?php echo  $trip['staying']?>"  
+                                                    data-phone="<?php echo  $trip['phone']?>"
+                                                    data-img="<?php echo  $trip['img']?>"
+                                                    data-img2="<?php echo  $trip['img2']?>"
+                                                    data-img3="<?php echo  $trip['img3']?>"
+                                                    data-video="<?php echo  $trip['video']?>"
+                                                    data-description="<?php echo  $trip['description']?>"
+                                                    data-maps="<?php echo  $trip['maps_link']?>"
 
 
-                                            >
-                                            Visitar
-                            </a>
-                        </div>    
-                    </div>
+                                                >
+                                                Visitar
+                                </a>
+                            </div>    
+                        </div>
                     </div>
                     <?php } ?>  
                 </div>
-                </div> 
-            </div>
-            
-
+            </div> 
+        </div>            
 </body>
 <?php 
 
