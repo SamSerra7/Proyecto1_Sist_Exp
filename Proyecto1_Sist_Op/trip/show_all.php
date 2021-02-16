@@ -93,6 +93,7 @@ include("../public/nav.php");
                                 </a>
                             </div>    
                         </div>
+                        <br>
                     </div>
                     <?php } ?>  
                 </div>

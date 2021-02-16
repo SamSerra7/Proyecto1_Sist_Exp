@@ -21,31 +21,23 @@ include("../public/nav.php");
     <div class="header">
         <div class="one">
             <div class="container selects">
-                <h3 class="searchFont">Búsqueda por criterios</h3>
+                <h3 class="searchFont">Búsqueda por categorías</h3>
                 <br>
-                <form name="final" action="../../controller/discover_trip.php" method="post">
-                    <select name="direction">
-                        <option value="Guanacaste">Guanacaste</option>
-                        <option value="Puntarenas">Puntarenas</option>
-                        <option value="Limón">Limón</option>
-                        <option value="Heredia">Heredia</option>
-                        <option value="Alajuela">Alajuela</option>
-                        <option value="San José">San José</option>
-                        <option value="Cartago">Cartago</option>
+                <form name="final" action="../../controller/search_by_category.php" method="post">
+                <select name="category">
+                <?php 
+                include_once '../configuration/config.php';
+                $query = $pdo->prepare("SELECT * FROM trip_category");
+                $query->execute();
+                $categories = $query->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach($categories as $category){  ?>
+                    <option value=<?php echo $category['idtrip_category']?> ><?php echo  $category['name_category']?></option>
+                
+                    <?php } ?>
                     </select>
-                    <br>
-                    <select name="staying">
-                        <option value="1">Visita Rápida</option>
-                        <option value="2">Visita Larga</option>
-                    </select>
-                    <br>
-                    <select name="access">
-                        <option value="Fácil">Fácil</option>
-                        <option value="Regular">Regular</option>
-                        <option value="Difícil">Difícil</option>
-                    </select>
-                    <div class="form-group">
-                        <input value="DESCUBRIR" type="submit" name="submit" style= "width: 30%; margin: 1%;">
+                <div class="form-group">
+                        <input value="BUSCAR" type="submit" name="submit" style= "width: 30%; margin: 1%;">
                 </div>
                 </form>
             </div>
@@ -56,7 +48,6 @@ include("../public/nav.php");
             </div>
             <?php 
                 if(isset($trips)){
-                    ?><h6>Descubre los siguientes lugares...</h6><?php
                     foreach($trips as $trip){        
             ?>
             <br>
