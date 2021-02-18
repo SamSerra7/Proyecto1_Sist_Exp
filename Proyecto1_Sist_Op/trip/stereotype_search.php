@@ -21,9 +21,9 @@ include("../public/nav.php");
     <div class="header">
         <div class="one">
             <div class="container selects">
-                <h3 class="searchFont">Búsqueda por criterios</h3>
+                <h3 class="searchFont">Búsqueda por estereotipos</h3>
                 <br>
-                <form name="final" action="../../controller/discover_trip.php" method="post">
+                <form name="final" action="../../controller/stereotype_trip.php" method="post">
                     <select name="direction">
                         <option value="Guanacaste">Guanacaste</option>
                         <option value="Puntarenas">Puntarenas</option>
@@ -56,7 +56,7 @@ include("../public/nav.php");
             </div>
             <?php 
                 if(isset($trips)){
-                    ?><h6>Descubre los siguientes lugares...</h6><?php
+                    ?><h6>Quizá te pueda interezar...</h6><?php
                     foreach($trips as $trip){        
             ?>
             <br>

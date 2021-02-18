@@ -24,6 +24,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="../trip/search_trip.php">CRITERIOS</a> 
             <a class="dropdown-item" href="../trip/category_search.php">CATEGORÍAS</a> 
+            <a class="dropdown-item" href="../trip/stereotype_search.php">ESTEREOTIPOS</a> 
             <a class="dropdown-item" href="../trip/show_all.php">VER TODOS</a> 
           </div>
         </li>
