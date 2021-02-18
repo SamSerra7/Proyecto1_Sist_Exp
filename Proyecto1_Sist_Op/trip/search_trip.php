@@ -9,182 +9,238 @@ include("../public/nav.php");
 
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
     <title>Find Trip</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../public/css/styles.css">
 
 </head>
 
 <body>
-    <div style="padding-top: 1%;padding-left: 1%">
-        <a href="../index.php" style="color: white;">
-            << Volver al inicio</a>
-    </div>
-    <div class="header">
-
-        <div class="one">
-            <div class="container selects">
-                <h3 class="searchFont">Búsqueda por criterios</h3>
-                <br>
-                <form name="parameters">
-                    <select name="type" onchange="this.form.submit()">
-                        <option value="" disabled selected>Tipo de turismo</option>
-                        <option value="Descanso">Descanso</option>
-                        <option value="Gastronomico">Gastronomico</option>
-                        <option value="Aventura">Aventura</option>
-                        <option value="Didactico">Didactico</option>
-                    </select>
-                    <br>
-                    <select name="duration" onchange="this.form.submit()">
-                        <option value="" disabled selected>Duracion de estadía</option>
-                        <option value="rapida">Visita rápida</option>
-                        <option value="Larga">Visita Larga</option>
-                    </select>
-                    <br>
-                    <select name="access" onchange="this.form.submit()">
-                        <option value="" disabled selected>Dificultad de acceso</option>
-                        <option value="facil">Fácil</option>
-                        <option value="regular">Regular</option>
-                        <option value="dificil">Difícil</option>
-                    </select>
-                </form>
-            </div>
+    <div id="page-container">
+        <div style="padding-top: 1%;padding-left: 1%">
+            <a href="../index.php" style="color: white;">
+                << Volver al inicio</a>
         </div>
 
-        <div class="two">
-            <div class="container">
-                <h3 class="resultsFont">Resultados</h3>
-            </div>
-            <div class="card">
-                <div class="card-horizontal">
-                    <img title="Best Western Jaco Beach All Inclusive Resort" alt="Titulo" class="card-img-top imgDestino" src="../public/img/aerial-view.jpg">
+        <div class="header">
 
-                    <div class="card-body">
-                        <h5 align="center" class="card-title"> <b>Best Western Jaco Beach</b></h5>
-                        <p class="card-text">
-
-                        <div class="row">
-                            <div class="col-6">
-                                <h6 align="center"> <b>Ubicacion: </b></h6>
-                                <h6 align="center">Puntarenas</h6>
-                            </div>
-                            <div class="col-6">
-                                <h6 align="center"> <b>Categoria: </b> </h6>
-                                <h6 align="center">Descanso</h6>
-                            </div>
+            <div class="one">
+                <div class="container selects">
+                    <h3 class="searchFont">Búsqueda por criterios</h3>
+                    <br>
+                    <form name="final" action="../controller/search_trip.php" method="post">
+                        <select name="type">
+                            <option value="" disabled selected>Tipo de turismo</option>
+                            <option value=1>Descanso</option>
+                            <option value=2>Gastronomico</option>
+                            <option value=3>Aventura</option>
+                            <option value=4>Didactico</option>
+                        </select>
+                        <br>
+                        <select name="duration">
+                            <option value="" disabled selected>Duracion de estadía</option>
+                            <option value=1>Visita rápida</option>
+                            <option value=2>Visita Larga</option>
+                        </select>
+                        <br>
+                        <select name="access">
+                            <option value="" disabled selected>Dificultad de acceso</option>
+                            <option value=Fácil>Fácil</option>
+                            <option value=Regular>Regular</option>
+                            <option value=Difícil>Difícil</option>
+                        </select>
+                        <br>
+                        <select name="internet">
+                            <option value="" disabled selected>Acceso a internet</option>
+                            <option value=1>Sí</option>
+                            <option value=2>No</option>
+                        </select>
+                        <br>
+                        <select name="security">
+                            <option value="" disabled selected>Seguridad privada</option>
+                            <option value=1>Sí</option>
+                            <option value=2>No</option>
+                        </select>
+                        <div class="form-group">
+                            <input value="BUSCAR" type="submit" name="submit" style="width: 30%; margin: 1%; background: #25533b; color:blanchedalmond;">
                         </div>
-
-
-
-                        <div class="row">
-                            <div class="col-6">
-                                <h6 align="center"> <b>Acceso: </b> </h6>
-                                <h6 align="center"> Fácil</h6>
-                            </div>
-                            <div class="col-6">
-                                <h6 align="center"> <b>Precio: </b> </h6>
-                                <h6 align="center"> $80.99</h6>
-                            </div>
+                        <br>
+                        <div class="form-group">
+                            <input name="submit" type="submit" style="width: 30%; margin: 1%;" value="REINICIAR">
                         </div>
-
-
-                        </p>
-                        <button class="btn btn-primary centradobtn" name="btnAction" value="Agregar" type="submit" data-toggle="modal" data-target="#tripModal">
-                            Visitar
-                        </button>
-                    </div>
+                    </form>
                 </div>
+
+            </div>
+
+            <div class="two">
+                <div class="container">
+                    <h3 class="resultsFont"><?php if (isset($tourist_type)) {
+                                                echo $tourist_type;
+                                            } ?></h3>
+                </div>
+                <?php
+                if (isset($trips)) {
+                    foreach ($trips as $trip) {
+                ?>
+                        <br>
+                        <div class="card">
+                            <div class="card-horizontal">
+                                <img title=<?php echo  $trip['name'] ?> alt="Titulo" class="card-img-top imgDestino" src=<?php echo  $trip['img'] ?>>
+                                <div class="card-body">
+                                    <h5 align="center" class="card-title"> <b><?php echo  $trip['name'] ?></b></h5>
+                                    <p class="card-text">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h6 align="center"> <b>Ubicacion: </b></h6>
+                                            <h6 align="center"><?php echo  $trip['direction'] ?></h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6 align="center"> <b>Categoria: </b> </h6>
+                                            <h6 align="center"><?php echo  $trip['tourism'] ?></h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h6 align="center"> <b>Acceso: </b> </h6>
+                                            <h6 align="center"><?php echo  $trip['access'] ?></h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6 align="center"> <b>Precio: </b> </h6>
+                                            <h6 align="center"><?php echo  $trip['price'] ?></h6>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h6 align="center"> <b>Internet: </b> </h6>
+                                            <h6 align="center"><?php if ($trip['internet'] == 1) {
+                                                                    echo 'Disponible';
+                                                                } else {
+                                                                    echo 'No disponible';
+                                                                } ?></h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6 align="center"> <b>Seguridad: </b> </h6>
+                                            <h6 align="center"><?php if ($trip['security'] == 1) {
+                                                                    echo 'Seguridad 24/7';
+                                                                } else {
+                                                                    echo 'Sin seguridad privada';
+                                                                } ?></h6>
+
+                                        </div>
+                                    </div>
+                                    </p>
+                                    <button id="link" style="transform: translateX(-50%); margin-left: 50%;" class="open-my-modal btn btn-primary centradobtn" name=" btnAction" value="Agregar" type="submit" data-toggle="modal" data-target="#tripModal" data-id="<?php echo $trip['tripId'] ?>" data-name="<?php echo  $trip['name'] ?>" data-location="<?php echo  $trip['direction'] ?>" data-staying="<?php if ($trip['staying'] == 1) {
+                                                                                                                                                                                                                                                                                                                                                                                                                    echo 'Visita rápida';
+                                                                                                                                                                                                                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                                                                                                                                                                                                                    echo 'Visita larga';
+                                                                                                                                                                                                                                                                                                                                                                                                                } ?>" data-phone="<?php echo  $trip['phone'] ?>" data-img="<?php echo  $trip['img'] ?>" data-img2="<?php echo  $trip['img2'] ?>" data-img3="<?php echo  $trip['img3'] ?>" data-video="<?php echo  $trip['video'] ?>" data-description="<?php echo  $trip['description'] ?>" data-maps="<?php echo  $trip['maps_link'] ?>" data-internet="<?php if ($trip['internet'] == 1) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                echo 'Disponible';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            } else {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                echo 'No disponible';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            } ?>" data-security="<?php if ($trip['security'] == 1) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo 'Seguridad 24/7';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo 'Sin seguridad privada';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } ?>">
+                                        Visitar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    <?php }
+                } else {
+                    include_once '../configuration/config.php';
+                    $query = $pdo->prepare("SELECT * FROM trip, tourism_type where tourism_type.tourism_type_id = trip.tourism_type_id");
+                    $query->execute();
+                    $trips = $query->fetchAll(PDO::FETCH_ASSOC);
+
+                    foreach ($trips as $trip) {
+
+
+                    ?>
+                        <br>
+                        <div class="card">
+                            <div class="card-horizontal">
+                                <img title=<?php echo  $trip['name'] ?> alt="Titulo" class="card-img-top imgDestino" src=<?php echo  $trip['img'] ?>>
+                                <div class="card-body">
+                                    <h5 align="center" class="card-title"> <b><?php echo  $trip['name'] ?></b></h5>
+                                    <p class="card-text">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h6 align="center"> <b>Ubicacion: </b></h6>
+                                            <h6 align="center"><?php echo  $trip['direction'] ?></h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6 align="center"> <b>Categoria: </b> </h6>
+                                            <h6 align="center"><?php echo  $trip['tourism'] ?></h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h6 align="center"> <b>Acceso: </b> </h6>
+                                            <h6 align="center"><?php echo  $trip['access'] ?></h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6 align="center"> <b>Precio: </b> </h6>
+                                            <h6 align="center"><?php echo  $trip['price'] ?></h6>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h6 align="center"> <b>Internet: </b> </h6>
+                                            <h6 align="center"><?php if ($trip['internet'] == 1) {
+                                                                    echo 'Disponible';
+                                                                } else {
+                                                                    echo 'No disponible';
+                                                                } ?></h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6 align="center"> <b>Seguridad: </b> </h6>
+                                            <h6 align="center"><?php if ($trip['security'] == 1) {
+                                                                    echo 'Seguridad 24/7';
+                                                                } else {
+                                                                    echo 'Sin seguridad privada';
+                                                                } ?></h6>
+
+                                        </div>
+                                    </div>
+                                    </p>
+                                    <button id="link" style="transform: translateX(-50%); margin-left: 50%;" class="open-my-modal  btn btn-primary centradobtn" name=" btnAction" value="Agregar" type="submit" data-toggle="modal" data-target="#tripModal" data-id="<?php echo $trip['tripId'] ?>" data-name="<?php echo  $trip['name'] ?>" data-location="<?php echo  $trip['direction'] ?>" data-staying="<?php if ($trip['staying'] == 1) {
+                                                                                                                                                                                                                                                                                                                                                                                                                    echo 'Visita rápida';
+                                                                                                                                                                                                                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                                                                                                                                                                                                                    echo 'Visita larga';
+                                                                                                                                                                                                                                                                                                                                                                                                                } ?>" data-phone="<?php echo  $trip['phone'] ?>" data-img="<?php echo  $trip['img'] ?>" data-img2="<?php echo  $trip['img2'] ?>" data-img3="<?php echo  $trip['img3'] ?>" data-video="<?php echo  $trip['video'] ?>" data-description="<?php echo  $trip['description'] ?>" data-maps="<?php echo  $trip['maps_link'] ?>" data-internet="<?php if ($trip['internet'] == 1) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                echo 'Disponible';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            } else {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                echo 'No disponible';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            } ?>" data-security="<?php if ($trip['security'] == 1) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo 'Seguridad 24/7';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo 'Sin seguridad privada';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } ?>">
+                                        Visitar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                <?php }
+                } ?>
             </div>
             <br>
-            <div class="card">
-                <div class="card-horizontal">
-                    <img title="Best Western Jaco Beach All Inclusive Resort" alt="Titulo" class="card-img-top imgDestino" src="../public/img/volcano-lodge-springs.jpg">
-
-                    <div class="card-body">
-                        <h5 align="center" class="card-title"> <b>Volcano Lodge</b></h5>
-                        <p class="card-text">
-
-                        <div class="row">
-                            <div class="col-6">
-                                <h6 align="center"> <b>Ubicacion: </b></h6>
-                                <h6 align="center">San Carlos</h6>
-                            </div>
-                            <div class="col-6">
-                                <h6 align="center"> <b>Categoria: </b> </h6>
-                                <h6 align="center">Descanso</h6>
-                            </div>
-                        </div>
-
-
-
-                        <div class="row">
-                            <div class="col-6">
-                                <h6 align="center"> <b>Acceso: </b> </h6>
-                                <h6 align="center"> Fácil</h6>
-                            </div>
-                            <div class="col-6">
-                                <h6 align="center"> <b>Precio: </b> </h6>
-                                <h6 align="center"> $90.99</h6>
-                            </div>
-                        </div>
-
-
-                        </p>
-                        <button class="btn btn-primary centradobtn" name="btnAction" value="Agregar" type="submit" data-toggle="modal" data-target="#tripModal">
-                            Visitar
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="card">
-                <div class="card-horizontal">
-                    <img title="Best Western Jaco Beach All Inclusive Resort" alt="Titulo" class="card-img-top imgDestino" src="../public/img/secrets-papagayo-costa.jpg">
-
-                    <div class="card-body">
-                        <h5 align="center" class="card-title"> <b>Secrets Papagayo Costa Rica</b></h5>
-                        <p class="card-text">
-
-                        <div class="row">
-                            <div class="col-6">
-                                <h6 align="center"> <b>Ubicacion: </b></h6>
-                                <h6 align="center">Guanacaste</h6>
-                            </div>
-                            <div class="col-6">
-                                <h6 align="center"> <b>Categoria: </b> </h6>
-                                <h6 align="center">Descanso</h6>
-                            </div>
-                        </div>
-
-
-
-                        <div class="row">
-                            <div class="col-6">
-                                <h6 align="center"> <b>Acceso: </b> </h6>
-                                <h6 align="center"> Fácil</h6>
-                            </div>
-                            <div class="col-6">
-                                <h6 align="center"> <b>Precio: </b> </h6>
-                                <h6 align="center"> $365.99</h6>
-                            </div>
-                        </div>
-
-
-                        </p>
-                        <button class="btn btn-primary centradobtn" name="btnAction" value="Agregar" type="submit" data-toggle="modal" data-target="#tripModal">
-                            Visitar
-                        </button>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-    <?php include("../public/footer.php"); ?>
+
 
     <!-- Modal -->
-    <div class="modal fade" id="tripModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="tripModal" aria-labelledby="triplabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document" id="mdialTamanio">
             <div class="modal-content prueba">
                 <div class="modal-body">
-                    <h4 align="center"><b>Wyndham Tamarindo</b></h4>
+                    <h4 align="center"><b>
+                            <div id="name">
+                        </b></h4>
                     <div>
                         <div class="col-md-12 ">
 
@@ -196,13 +252,13 @@ include("../public/nav.php");
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="d-block w-100" src="../public/img/imagen2.jpg" height="445" ; alt="First slide">
+                                        <img class="d-block w-100" id="img" height="445" ; alt="First slide">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="../public/img/imagen1.webp" height="445" alt="Second slide">
+                                        <img class="d-block w-100" id="img2" height="445" alt="Second slide">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="../public/img/imagen3.jpg" height="445" alt="Third slide">
+                                        <img class="d-block w-100" id="img3" height="445" alt="Third slide">
                                     </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -225,17 +281,26 @@ include("../public/nav.php");
 
                         <div class="col-md-6 ">
 
-                            <h6> <b>Ubicacion: </b> Tamarindo, Guanacaste </h6> <br>
-                            <h6> <b>Tipo de turismo: </b> Descanso </h6> <br>
-                            <h6> <b>Check in: </b> 15:00 </h6> <br>
-                            <h6> <b>Check out: </b> 11:00 </h6> <br>
-                            <h6> <b>Valor de estacionamiento </b> Gratuito </h6> <br>
-                            <h6> <b>Contacto </b> 800 854 78544 </h6>
+                            <h6> <b>Ubicacion: </b>
+                                <div id="location">
+                            </h6> <br>
+                            <h6> <b>Estadía: </b>
+                                <div id="staying">
+                            </h6> <br>
+                            <h6> <b>Contacto: </b>
+                                <div id="phone">
+                            </h6> <br>
+                            <h6> <b>Internet </b>
+                                <div id="internet">
+                            </h6> <br>
+                            <h6> <b>Seguridad </b>
+                                <div id="security">
+                            </h6>
 
                         </div>
 
                         <div class="col-md-6 ">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.5131950692776!2d-85.83654928465401!3d10.300751270608483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f9e39389fe3de05%3A0xe2b5bc0c363402ad!2sWyndham%20Tamarindo!5e0!3m2!1ses!2scr!4v1611817123397!5m2!1ses!2scr" width="400" height="300" frameborder="5" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+                            <iframe id="maps" width="400" height="300" frameborder="5" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
                             </iframe>
                         </div>
 
@@ -249,21 +314,12 @@ include("../public/nav.php");
 
                             <div class="infoColor">
                                 <h6 style=>
-                                    Toma un descanso en nuestro tranquilo hotel Wyndham Tamarindo cerca de la bahía de Tamarindo,
-                                    a lo largo de la costa norte del Pacífico en Costa Rica. Ubicado en uno de los rincones más
-                                    hermosos de Centroamérica, somos un oasis tropical, que ofrece una belleza natural, un alojamiento
-                                    elegante y un servicio de primer nivel. Relájate en nuestro spa con un tratamiento exclusivo,
-                                    descansa en la piscina infinita con un coctel del bar de la piscina o mantente en forma en
-                                    nuestro gimnasio. Vista, nuestro restaurante frente al mar, es el lugar perfecto para tomar
-                                    desayuno, almorzar y cenar.
+                                    <div id="description">
                                 </h6>
                             </div>
                         </div>
-                        <video class="video" controls max-width=600px height=auto>
-                            <source src="../public/video/Paisaje.mp4" type="video/mp4">
-                            <source src="../public/video/Paisaje.ogg" type="video/ogg">
-                            Your browser does not support the video tag.
-                        </video>
+                        <iframe id="video" width="400" height="300" frameborder="5" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+                        </iframe>
 
                     </div>
                 </div>
@@ -272,14 +328,62 @@ include("../public/nav.php");
     </div>
     </div>
     <!-- End modal -->
+    <div id="footer">
+        <?php include("../public/footer.php"); ?>
+    </div>
 </body>
 <script>
-    $('[name="type]').change(function() {
-        $(this).closest('form').submit();
+    $(document).ready(function() {
+        $('.open-my-modal').click(function() {
+            $('#name').html($(this).data('name'));
+            $('#location').html($(this).data('location'));
+            $('#staying').html($(this).data('staying'));
+            $('#phone').html($(this).data('phone'));
+            $('#description').html($(this).data('description'));
+            $('#img').attr('src', $(this).data('img'));
+            $('#img2').attr('src', $(this).data('img2'));
+            $('#img3').attr('src', $(this).data('img3'));
+            $('#video').attr('src', $(this).data('video'));
+            $('#maps').attr('src', $(this).data('maps'));
+            $('#internet').html($(this).data('internet'));
+            $('#security').html($(this).data('security'));
+
+            // show Modal
+            $('#tripModal').modal('show');
+        });
     });
 </script>
 
 <style>
+    #page-container {
+        position: relative;
+        min-height: 100vh;
+    }
+
+    #content-wrap {
+        padding-bottom: 2.5rem;
+        /* Footer height */
+    }
+
+    #footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem;
+        /* Footer height */
+    }
+
+    .buttonReset {
+        display: block;
+        width: 115px;
+        height: 25px;
+        background: #FFFFFF;
+        text-align: center;
+        color: black;
+        font-weight: regular;
+        line-height: 25px;
+    }
+
     .cardDestino {
         height: 500px;
         width: 350px;
