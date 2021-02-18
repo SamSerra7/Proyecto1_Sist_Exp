@@ -25,7 +25,7 @@ include("../admin_nav.php");
 <body>
         <br>
         <div class="container">
-        <a href="../../admin/show.php" style="color: white;"><< Volver atrás</a>
+        <a href="../../trip/show.php" style="color: white;"><< Volver atrás</a>
                 <div class="row">
                         <div class="column">
                             <br>
@@ -59,6 +59,30 @@ include("../admin_nav.php");
                                 </div>
                                 <div class="form-group">
                                     <input type="number" class="form-control" placeholder="Longitud" name="longitude">  
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="URL de la imagen 2" name="img2">  
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="URL de la imagen 3" name="img3">  
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="URL del video" name="video">  
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Descripción" name="description">  
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Link del mapa" name="maps_link">  
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" min=0 placeholder="Categoría" name="category">  
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" placeholder="Internet" name="internet">  
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" placeholder="Seguridad" name="security">  
                                 </div>
 
                                 <button type="submit" class="btn btn-light">Añadir</button>
