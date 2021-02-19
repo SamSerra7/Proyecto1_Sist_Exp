@@ -60,6 +60,14 @@ include("../admin_nav.php");
                                         <th scope="col">Contacto</th>
                                         <th scope="col">Lat</th>
                                         <th scope="col">Lon</th>
+                                        <th scope="col">img2</th>
+                                        <th scope="col">img3</th>
+                                        <th scope="col">video</th>
+                                        <th scope="col">description</th>
+                                        <th scope="col">maps_link</th>
+                                        <th scope="col">category</th>
+                                        <th scope="col">internet</th>
+                                        <th scope="col">security</th>
                                         <th scope="col">Modificar</th>
                                         <th scope="col">Eliminar</th>
                                 </tr>
@@ -81,6 +89,14 @@ include("../admin_nav.php");
                                         <td><?php echo  $trip['phone']?></td>
                                         <td><?php echo  $trip['latitude'] == null ? " ": $trip['latitude'] ?></td>
                                         <td><?php echo  $trip['longitude'] == null ? " ": $trip['longitude'] ?></td>
+                                        <td><?php echo  $trip['img2'] == null ? " ": $trip['img2'] ?></td>
+                                        <td><?php echo  $trip['img3'] == null ? " ": $trip['img3'] ?></td>
+                                        <td><?php echo  $trip['video'] == null ? " ": $trip['video'] ?></td>
+                                        <td><?php echo  $trip['description'] == null ? " ": $trip['description'] ?></td>
+                                        <td><?php echo  $trip['maps_link'] == null ? " ": $trip['maps_link'] ?></td>
+                                        <td><?php echo  $trip['category'] == null ? " ": $trip['category'] ?></td>
+                                        <td><?php echo  $trip['internet'] == null ? " ": $trip['internet'] ?></td>
+                                        <td><?php echo  $trip['security'] == null ? " ": $trip['security'] ?></td>
                                         
                                         <!--EDIT BUTTON-->
 
@@ -95,7 +111,15 @@ include("../admin_nav.php");
                                                         img=<?php echo $trip['img'] ?>&
                                                         phone=<?php echo $trip['phone'] ?>&
                                                         latitude=<?php echo $trip['latitude'] ?>&
-                                                        longitude=<?php echo $trip['longitude'] ?>
+                                                        longitude=<?php echo $trip['longitude'] ?>&
+                                                        img2=<?php echo $trip['img2'] ?>&
+                                                        img3=<?php echo $trip['img3'] ?>&
+                                                        video=<?php echo $trip['video'] ?>&
+                                                        description=<?php echo $trip['description'] ?>&
+                                                        maps_link=<?php echo $trip['maps_link'] ?>&
+                                                        category=<?php echo $trip['category'] ?>&
+                                                        internet=<?php echo $trip['internet'] ?>&
+                                                        security=<?php echo $trip['security'] ?>
                                                         ">
                                                         <img src="../../public/img/edit.png"/>
                                                 </a>
