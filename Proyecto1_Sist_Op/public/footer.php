@@ -15,7 +15,8 @@
                 <div class="">
                         <div class="row">
                                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                                        <h5 class="text-uppercase">Contáctenos</h5>
+                                        <a href="public/contactenos.php" class="text-uppercase">
+                                        <h5 style="color:#FFFFFF">Contáctenos </h5></a>
                                 </div>
                                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
                                         <h5 class="text-uppercase">Redes Sociales</h5>
