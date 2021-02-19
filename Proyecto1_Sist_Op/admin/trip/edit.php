@@ -43,12 +43,6 @@
                         <input type="number" class="form-control" placeholder="Precio" name="price" value="<?php echo $_GET["price"]?>">  
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Dirección" name="direction" value="<?php echo $_GET["direction"]?>">  
-                    </div>
-                    <div class="form-group">
-                        <input type="number" class="form-control" placeholder="Estadía" name="staying" value="<?php echo $_GET["staying"]?>">  
-                    </div>
-                    <div class="form-group">
                         <input type="number" class="form-control" placeholder="Tipo de turismo" name="tourism_type_id" value="<?php echo $_GET["tourism_type_id"]?>">
                     </div>
                     <div class="form-group">
@@ -56,6 +50,30 @@
                     </div>
                     <div class="form-group">
                         <input type="number" class="form-control" min=81111111 max=89999999 placeholder="Contacto" name="phone" value="<?php echo $_GET["phone"]?>">  
+                    </div>
+                    <div class="form-group">
+                        <select name="direction" value="<?php echo $_GET["direction"]?>">
+                            <option value="Guanacaste">Guanacaste</option>
+                            <option value="Puntarenas">Puntarenas</option>
+                            <option value="Limón">Limón</option>
+                            <option value="Heredia">Heredia</option>
+                            <option value="Alajuela">Alajuela</option>
+                            <option value="San José">San José</option>
+                            <option value="Cartago">Cartago</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="staying" value="<?php echo $_GET["staying"]?>">
+                            <option value="1">Visita Rápida</option>
+                            <option value="2">Visita Larga</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="access" value="<?php echo $_GET["access"]?>">
+                            <option value="Fácil">Fácil</option>
+                            <option value="Regular">Regular</option>
+                            <option value="Difícil">Difícil</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <input type="number" class="form-control" placeholder="Latitud" name="latitude" value="<?php echo $_GET["latitude"]?>">  

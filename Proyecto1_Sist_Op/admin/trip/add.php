@@ -40,12 +40,6 @@ include("../admin_nav.php");
                                     <input type="number" class="form-control" placeholder="Precio" name="price">  
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Dirección" name="direction">  
-                                </div>
-                                <div class="form-group">
-                                    <input type="number" class="form-control" placeholder="Estadía" name="staying">  
-                                </div>
-                                <div class="form-group">
                                     <input type="number" class="form-control" placeholder="Tipo de turismo" name="tourism_type_id">
                                 </div>
                                 <div class="form-group">
@@ -68,6 +62,30 @@ include("../admin_nav.php");
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="URL del video" name="video">  
+                                </div>
+                                <div class="form-group">
+                                    <select name="direction">
+                                        <option value="Guanacaste">Guanacaste</option>
+                                        <option value="Puntarenas">Puntarenas</option>
+                                        <option value="Limón">Limón</option>
+                                        <option value="Heredia">Heredia</option>
+                                        <option value="Alajuela">Alajuela</option>
+                                        <option value="San José">San José</option>
+                                        <option value="Cartago">Cartago</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="staying">
+                                        <option value="1">Visita Rápida</option>
+                                        <option value="2">Visita Larga</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="access">
+                                        <option value="Fácil">Fácil</option>
+                                        <option value="Regular">Regular</option>
+                                        <option value="Difícil">Difícil</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Descripción" name="description">  
