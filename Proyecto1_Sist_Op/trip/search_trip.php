@@ -73,6 +73,7 @@ include("../public/nav.php");
             </div>
 
             <div class="two">
+            <h3 class="searchFont">Resultados acuerdo a sus criterios</h3>
                 <div class="container">
                     <h3 class="resultsFont"><?php if (isset($tourist_type)) {
                                                 echo $tourist_type;
@@ -106,8 +107,17 @@ include("../public/nav.php");
                                         </div>
                                         <div class="col-6">
                                             <h6 align="center"> <b>Precio: </b> </h6>
-                                            <h6 align="center"><?php echo  $trip['price'] ?></h6>
+                                            <h6 align="center"><?php if ($trip['price'] == 1) {
+                                                                    echo 'Barato';
+                                                                } else if ($trip['price'] == 2) {
+                                                                    echo 'Cómodo';
+                                                                } else if ($trip['price'] == 3) {
+                                                                    echo 'Caro';
+                                                                } else {
+                                                                    echo '-';
+                                                                } ?>
 
+                                            </h6>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -139,16 +149,101 @@ include("../public/nav.php");
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             } else {
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 echo 'No disponible';
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             } ?>" data-security="<?php if ($trip['security'] == 1) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo 'Seguridad 24/7';
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo 'Sin seguridad privada';
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } ?>">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        echo 'Seguridad 24/7';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        echo 'Sin seguridad privada';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    } ?>">
                                         Visitar
                                     </button>
                                 </div>
                             </div>
                         </div>
-                    <?php }
+                    <?php } ?>
+
+                    <hr>
+                    <h3 class="searchFont">Resultados similares </h3>
+
+                    <?php
+                    if (isset($recomended)) {
+                        foreach ($recomended as $trip) {
+                    ?>
+                            <br>
+                            <div class="card">
+                                <div class="card-horizontal">
+                                    <img title=<?php echo  $trip['name'] ?> alt="Titulo" class="card-img-top imgDestino" src=<?php echo  $trip['img'] ?>>
+                                    <div class="card-body">
+                                        <h5 align="center" class="card-title"> <b><?php echo  $trip['name'] ?></b></h5>
+                                        <p class="card-text">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6 align="center"> <b>Ubicacion: </b></h6>
+                                                <h6 align="center"><?php echo  $trip['direction'] ?></h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <h6 align="center"> <b>Categoria: </b> </h6>
+                                                <h6 align="center"><?php echo  $trip['tourism'] ?></h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6 align="center"> <b>Acceso: </b> </h6>
+                                                <h6 align="center"><?php echo  $trip['access'] ?></h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <h6 align="center"> <b>Precio: </b> </h6>
+                                                <h6 align="center"><?php if ($trip['price'] == 1) {
+                                                                        echo 'Barato';
+                                                                    } else if ($trip['price'] == 2) {
+                                                                        echo 'Cómodo';
+                                                                    } else if ($trip['price'] == 3) {
+                                                                        echo 'Caro';
+                                                                    } else {
+                                                                        echo '-';
+                                                                    } ?>
+
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6 align="center"> <b>Internet: </b> </h6>
+                                                <h6 align="center"><?php if ($trip['internet'] == 1) {
+                                                                        echo 'Disponible';
+                                                                    } else {
+                                                                        echo 'No disponible';
+                                                                    } ?></h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <h6 align="center"> <b>Seguridad: </b> </h6>
+                                                <h6 align="center"><?php if ($trip['security'] == 1) {
+                                                                        echo 'Seguridad 24/7';
+                                                                    } else {
+                                                                        echo 'Sin seguridad privada';
+                                                                    } ?></h6>
+
+                                            </div>
+                                        </div>
+                                        </p>
+                                        <button id="link" style="transform: translateX(-50%); margin-left: 50%;" class="open-my-modal btn btn-primary centradobtn" name=" btnAction" value="Agregar" type="submit" data-toggle="modal" data-target="#tripModal" data-id="<?php echo $trip['tripId'] ?>" data-name="<?php echo  $trip['name'] ?>" data-location="<?php echo  $trip['direction'] ?>" data-staying="<?php if ($trip['staying'] == 1) {
+                                                                                                                                                                                                                                                                                                                                                                                                                        echo 'Visita rápida';
+                                                                                                                                                                                                                                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                                                                                                                                                                                                                                        echo 'Visita larga';
+                                                                                                                                                                                                                                                                                                                                                                                                                    } ?>" data-phone="<?php echo  $trip['phone'] ?>" data-img="<?php echo  $trip['img'] ?>" data-img2="<?php echo  $trip['img2'] ?>" data-img3="<?php echo  $trip['img3'] ?>" data-video="<?php echo  $trip['video'] ?>" data-description="<?php echo  $trip['description'] ?>" data-maps="<?php echo  $trip['maps_link'] ?>" data-internet="<?php if ($trip['internet'] == 1) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo 'Disponible';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo 'No disponible';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } ?>" data-security="<?php if ($trip['security'] == 1) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            echo 'Seguridad 24/7';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            echo 'Sin seguridad privada';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        } ?>">
+                                            Visitar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php }
+                    }
                 } else {
                     include_once '../configuration/config.php';
                     $query = $pdo->prepare("SELECT * FROM trip, tourism_type where tourism_type.tourism_type_id = trip.tourism_type_id");
@@ -158,7 +253,7 @@ include("../public/nav.php");
                     foreach ($trips as $trip) {
 
 
-                    ?>
+                        ?>
                         <br>
                         <div class="card">
                             <div class="card-horizontal">
@@ -183,8 +278,17 @@ include("../public/nav.php");
                                         </div>
                                         <div class="col-6">
                                             <h6 align="center"> <b>Precio: </b> </h6>
-                                            <h6 align="center"><?php echo  $trip['price'] ?></h6>
+                                            <h6 align="center"><?php if ($trip['price'] == 1) {
+                                                                    echo 'Barato';
+                                                                } else if ($trip['price'] == 2) {
+                                                                    echo 'Cómodo';
+                                                                } else if ($trip['price'] == 3) {
+                                                                    echo 'Caro';
+                                                                } else {
+                                                                    echo '-';
+                                                                } ?>
 
+                                            </h6>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -216,10 +320,10 @@ include("../public/nav.php");
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             } else {
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 echo 'No disponible';
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             } ?>" data-security="<?php if ($trip['security'] == 1) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo 'Seguridad 24/7';
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    echo 'Sin seguridad privada';
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                } ?>">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        echo 'Seguridad 24/7';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        echo 'Sin seguridad privada';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    } ?>">
                                         Visitar
                                     </button>
                                 </div>
