@@ -25,14 +25,14 @@
 <body>
     <br>
     <div class="container">
-        <a href="../../trip/show.php" style="color: white;"><< Volver atrás</a>
+        <a href="../trip/show.php" style="color: white;"><< Volver atrás</a>
         <div class="row">
             <div class="column">
                 <br>
                 <br>
                 <h2>MODIFICAR DESTINO</h2>
                 <br>
-                <form action="../controller/trip/edit_trip.php" method="post">
+                <form action="../../controller/trip/edit_trip.php" method="post">
                     <div class="form-group">
                         <input type="hidden" class="form-control" name="id" value="<?php echo $_GET["id"] ?>"> 
                     </div>

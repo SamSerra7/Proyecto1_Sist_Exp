@@ -25,14 +25,14 @@ include("../admin_nav.php");
 <body>
         <br>
         <div class="container">
-        <a href="../../trip/show.php" style="color: white;"><< Volver atrás</a>
+        <a href="../trip/show.php" style="color: white;"><< Volver atrás</a>
                 <div class="row">
                         <div class="column">
                             <br>
                             <br>
                             <h2>INGRESAR DESTINO</h2>
                             <br>
-                            <form action="../controller/trip/add_trip.php" method="post">
+                            <form action="../../controller/trip/add_trip.php" method="post">
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Nombre" name="name">  
                                 </div>
