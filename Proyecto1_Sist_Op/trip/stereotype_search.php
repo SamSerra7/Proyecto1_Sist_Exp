@@ -52,11 +52,11 @@ include("../public/nav.php");
         </div> 
         <div class="two">
             <div class="container">
-                <h3 class="resultsFont"><?php if(isset($tourist_type)){echo $tourist_type;} ?></h3>
+                <h3 class="resultsFont"><?php if(isset($trips)){echo $tourist_type;} ?></h3>
             </div>
             <?php 
                 if(isset($trips)){
-                    ?><h6>Quizá te pueda interezar...</h6><?php
+                    ?><h6>Quizá te pueda interesar...</h6><?php
                     foreach($trips as $trip){        
             ?>
             <br>
@@ -83,8 +83,17 @@ include("../public/nav.php");
                                         </div>
                                     <div class="col-6">
                                         <h6 align="center"> <b>Precio: </b> </h6>
-                                        <h6 align="center"><?php echo  $trip['price']?></h6>
-                                    
+                                        <h6 align="center"><?php if($trip['price']==1){
+                                                            echo 'Barato';
+                                                        }
+                                                            else if($trip['price']==2){
+                                                                echo 'Cómodo';
+                                                        }   else if($trip['price']==3){
+                                                                echo 'Caro';
+                                                        }else{
+                                                                echo '-';
+                                                        }?> 
+                                        </h6>
                                     </div>
                                 </div>  
                             </p>
@@ -152,7 +161,17 @@ include("../public/nav.php");
                                         </div>
                                     <div class="col-6">
                                         <h6 align="center"> <b>Precio: </b> </h6>
-                                        <h6 align="center"><?php echo  $trip['price']?></h6>
+                                        <h6 align="center"><?php if($trip['price']==1){
+                                                            echo 'Barato';
+                                                        }
+                                                            else if($trip['price']==2){
+                                                                echo 'Cómodo';
+                                                        }   else if($trip['price']==3){
+                                                                echo 'Caro';
+                                                        }else{
+                                                                echo '-';
+                                                        }?> 
+                                        </h6>
                                     
                                     </div>
                                 </div>  

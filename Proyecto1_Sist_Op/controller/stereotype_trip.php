@@ -47,8 +47,6 @@ function estimation(){
         if(($iteration > $high_probability) or $i==0){
             $high_probability = $iteration;
             $discover_type = $classes[$i];
-        }else if($iteration < $probability){
-            $probability= $iteration;
             $tourist_type = "Su perfil coincide con el turismo de tipo: ";
             switch ($classes[$i]) {
                 case 1:
@@ -64,6 +62,9 @@ function estimation(){
                     $tourist_type = $tourist_type."Didáctico" ;
                     break;
             }
+        }else if($iteration < $probability){
+            $probability= $iteration;
+            
         }
     }
 
@@ -72,7 +73,7 @@ function estimation(){
     $trips = $stmt->fetchAll(PDO::FETCH_ASSOC);    
         
    
-    include '../trip/discover.php';
+    include '../trip/stereotype_search.php';
 }
 
 
