@@ -72,7 +72,7 @@ function estimation(){
     $trips = $stmt->fetchAll(PDO::FETCH_ASSOC);    
         
    
-    include '../trip/discover.php';
+    include '../trip/stereotype_search.php';
 }
 
 
