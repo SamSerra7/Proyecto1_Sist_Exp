@@ -56,7 +56,7 @@ include("../public/nav.php");
             </div>
             <?php 
                 if(isset($trips)){
-                    ?><h6>Descubre los siguientes lugares...</h6><?php
+                    ?><h6>Descubre algo distino...</h6><?php
                     foreach($trips as $trip){        
             ?>
             <br>
@@ -152,7 +152,18 @@ include("../public/nav.php");
                                         </div>
                                     <div class="col-6">
                                         <h6 align="center"> <b>Precio: </b> </h6>
-                                        <h6 align="center"><?php echo  $trip['price']?></h6>
+                                        <h6 align="center"><?php if($trip['price']==1){
+                                                        echo 'Barato';
+                                                    }
+                                                        else if($trip['price']==2){
+                                                            echo 'Cómodo';
+                                                    }   else if($trip['price']==3){
+                                                            echo 'Caro';
+                                                    }else{
+                                                            echo '-';
+                                                    }?> 
+                                        
+                                        </h6>
                                     
                                     </div>
                                 </div>  

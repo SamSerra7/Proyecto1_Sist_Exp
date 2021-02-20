@@ -74,7 +74,16 @@ include("../public/nav.php");
                                         </div>
                                     <div class="col-6">
                                         <h6 align="center"> <b>Precio: </b> </h6>
-                                        <h6 align="center"><?php echo  $trip['price']?></h6>
+                                        <h6 align="center"><?php if($trip['price']==1){
+                                                            echo 'Barato';
+                                                        }
+                                                            else if($trip['price']==2){
+                                                                echo 'Cómodo';
+                                                        }   else if($trip['price']==3){
+                                                                echo 'Caro';
+                                                        }else{
+                                                                echo '-';
+                                                        }?> 
                                     
                                     </div>
                                 </div>  
@@ -142,8 +151,17 @@ include("../public/nav.php");
                                             <h6 align="center"><?php echo  $trip['access']?></h6>
                                         </div>
                                     <div class="col-6">
-                                        <h6 align="center"> <b>Precio: </b> </h6>
-                                        <h6 align="center"><?php echo  $trip['price']?></h6>
+                                    <h6 align="center"> <b>Precio: </b> </h6>
+                                            <h6 align="center"><?php if($trip['price']==1){
+                                                            echo 'Barato';
+                                                        }
+                                                            else if($trip['price']==2){
+                                                                echo 'Cómodo';
+                                                        }   else if($trip['price']==3){
+                                                                echo 'Caro';
+                                                        }else{
+                                                                echo '-';
+                                                        }?> </h6>
                                     
                                     </div>
                                 </div>  
