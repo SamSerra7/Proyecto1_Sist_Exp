@@ -41,7 +41,7 @@
             <div class="alert alert-success" role="alert">
                 Destino eliminado
             </div>
-            <script> location.href = "../trip/show.php"; </script>
+            <script> location.href = "../admin/trip/show.php"; </script>
             <?php
            
             
