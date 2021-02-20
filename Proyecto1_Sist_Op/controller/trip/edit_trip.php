@@ -1,6 +1,7 @@
 <?php
-   require_once '../model/trip_model.php';
+   require_once '../../model/trip_model.php';
     
+   $id = $_POST["id"];
    $name = $_POST["name"];
    $price = $_POST["price"];
    $direction = $_POST["direction"];
@@ -20,10 +21,10 @@
    $security = $_POST["security"];
 
     $trip = new Trip_model();
-    $trip -> edit_user(  
+    $trip -> edit_trip(  
                             $name,$price,$direction,$staying,$tourism_type_id,$img,
                             $phone,$latitude,$longitude,$img2,$img3,$video,$description,
-                            $maps_link,$category,$internet,$security
+                            $maps_link,$category,$internet,$security,$id
                         );
 
 ?>

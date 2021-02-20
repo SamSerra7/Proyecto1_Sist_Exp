@@ -89,8 +89,8 @@ include("../admin_nav.php");
                                         <td><?php echo  $trip['phone']?></td>
                                         <td><?php echo  $trip['latitude'] == null ? " ": $trip['latitude'] ?></td>
                                         <td><?php echo  $trip['longitude'] == null ? " ": $trip['longitude'] ?></td>
-                                        <td><?php echo  $trip['img2'] == null ? " ": $trip['img2'] ?></td>
-                                        <td><?php echo  $trip['img3'] == null ? " ": $trip['img3'] ?></td>
+                                        <td><img src="<?php echo  $trip['img2']?>" alt="Imagen 2" class="thumb-img"></td>
+                                        <td><img src="<?php echo  $trip['img3']?>" alt="Imagen 3" class="thumb-img"></td>
                                         <td><?php echo  $trip['video'] == null ? " ": $trip['video'] ?></td>
                                         <td><?php echo  $trip['description'] == null ? " ": $trip['description'] ?></td>
                                         <td><?php echo  $trip['maps_link'] == null ? " ": $trip['maps_link'] ?></td>
@@ -130,10 +130,10 @@ include("../admin_nav.php");
                                         <!--DELETE-->
 
                                         <td>
-                                                <a id="link" class="open-my-modal" data-toggle="modal" data-target="#exampleModal"
+                                                <a id="link" class="open-my-modal" data-toggle="modal" data-target="#exampleModal2"
                                                         data-id="<?php echo $trip['tripId']?>"  
                                                         data-name="<?php echo $trip['name']?>" 
-                                                        href="#exampleModal"
+                                                        href="#exampleModal2"
                                                 >      
                                                         <img src="../../public/img/delete.png" />            
                                                 </a>
@@ -173,11 +173,11 @@ include("../admin_nav.php");
 
 </body>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModal2Label" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">INFORMACIÓN DEL DESTINO</h5>
+                <h5 class="modal-title" id="exampleModal2Label">INFORMACIÓN DEL DESTINO</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -215,10 +215,9 @@ $(document).ready(function () {
     $('.open-my-modal').click(function(){
         $('#idTrip').html($(this).data('id'));
         $('#name').html($(this).data('name'));
-        $('#email').html($(this).data('email'));
 
          // show Modal
-         $('#exampleModal').modal('show');
+         $('#exampleModal2').modal('show');
     });
 });
 </script>

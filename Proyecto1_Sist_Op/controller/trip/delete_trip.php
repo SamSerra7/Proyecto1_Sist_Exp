@@ -1,5 +1,5 @@
 <?php
-   require_once '../model/trip_model.php';
+   require_once '../../model/trip_model.php';
     
     
     $id = $_POST["id"];

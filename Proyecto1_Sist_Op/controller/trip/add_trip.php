@@ -1,5 +1,5 @@
 <?php
-   require_once '../model/trip_model.php';
+   require_once '../../model/trip_model.php';
     
     
     $name = $_POST["name"];
@@ -22,7 +22,7 @@
 
 
     $trip = new Trip_model();
-    $trip -> add_user(  
+    $trip -> add_trip(  
                         $name,$price,$direction,$staying,$tourism_type_id,$img,
                         $phone,$latitude,$longitude,$img2,$img3,$video,$description,
                         $maps_link,$category,$internet,$security
