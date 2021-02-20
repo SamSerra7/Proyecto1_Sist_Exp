@@ -52,11 +52,11 @@ include("../public/nav.php");
         </div> 
         <div class="two">
             <div class="container">
-                <h3 class="resultsFont"><?php if(isset($tourist_type)){echo $tourist_type;} ?></h3>
+                <h3 class="resultsFont"><?php if(isset($trips)){echo $tourist_type;} ?></h3>
             </div>
             <?php 
                 if(isset($trips)){
-                    ?><h6>Quizá te pueda interezar...</h6><?php
+                    ?><h6>Quizá te pueda interesar...</h6><?php
                     foreach($trips as $trip){        
             ?>
             <br>

@@ -21,7 +21,7 @@ include("../public/nav.php");
     <div class="header">
         <div class="one">
             <div class="container selects">
-                <h3 class="searchFont">Búsqueda por criterios</h3>
+                <h3 class="searchFont">Descubrir</h3>
                 <br>
                 <form name="final" action="../../controller/discover_trip.php" method="post">
                     <select name="direction">
