@@ -175,39 +175,37 @@ include("../admin_nav.php");
 <!-- Modal -->
 <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModal2Label" aria-hidden="true">
         <div class="modal-dialog" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-                <h5 class="modal-title" id="exampleModal2Label">INFORMACIÓN DEL DESTINO</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-        </div>
-        <div class="modal-body">
-                <div class="row">
-                        <div class="col-md-12">
-                                <div class="form-group">
-                                        <label>ID del destino</label>
-                                        <div id='idTrip'></div>
+                <div class="modal-content">
+                        <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModal2Label">INFORMACIÓN DEL DESTINO</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                        <div class="modal-body">
+                                <div class="row">
+                                        <div class="col-md-12">
+                                                <div class="form-group">
+                                                        <label>ID del destino</label>
+                                                        <div id='idTrip'></div>
+                                                </div>
+                                                <div class="form-group">
+                                                        <label>Nombre</label>
+                                                        <div id='name'></div>
+                                                </div>                                        
+                                        </div>
                                 </div>
-                                <div class="form-group">
-                                        <label>Nombre</label>
-                                        <div id='name'></div>
+                                <div id="response">
                                 </div>
-                            </div>
-                        
+                        </div>
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-danger" id="btn_delete2">Eliminar</button>
+                                
                         </div>
                 </div>
-                <div id="response">
-                </div>
-                </div>
-                <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-danger" id="btn_delete">Eliminar</button>
-                        
-                </div>
-                </div>
-                </div>
-                </div>
+        </div>
+</div>
         <!-- End modal -->
 </html>
 <script>
@@ -223,7 +221,7 @@ $(document).ready(function () {
 </script>
 
 <script>
-  $('#btn_delete').click(function(){
+  $('#btn_delete2').click(function(){
     var id = $('#idTrip').text();
     var url='../../controller/trip/delete_trip.php';
     $.post(url, {id:id}, function(data){

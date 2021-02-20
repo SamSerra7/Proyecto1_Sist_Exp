@@ -6,6 +6,7 @@
     $price = $_POST["price"];
     $direction = $_POST["direction"];
     $staying = $_POST["staying"];
+    $access = $_POST["access"];
     $tourism_type_id = $_POST["tourism_type_id"];
     $img = $_POST["img"];
     $phone = $_POST["phone"];
@@ -23,9 +24,11 @@
 
     $trip = new Trip_model();
     $trip -> add_trip(  
-                        $name,$price,$direction,$staying,$tourism_type_id,$img,
-                        $phone,$latitude,$longitude,$img2,$img3,$video,$description,
-                        $maps_link,$category,$internet,$security
+                        $name,$price,$direction,$staying,$access,$tourism_type_id,
+                        $img,$phone,$latitude,$longitude,$img2,$img3,$video,
+                        $description,$maps_link,$category,$internet,$security
                     );
+    header("Location:../../admin/trip/show.php");
 
+    
 ?>

@@ -5,24 +5,19 @@
 
         
         public function add_trip(
-                                    $name,$price,$direction,$staying,$tourism_type_id,$img,
+                                    $name,$price,$direction,$staying,$access,$tourism_type_id,$img,
                                     $phone,$latitude,$longitude,$img2,$img3,$video,$description,
                                     $maps_link,$category,$internet,$security
                                 ){
             try{
                 require_once '../../configuration/config.php';
-                $sql = "INSERT INTO trip ($name,$price,$direction,$staying,$tourism_type_id,$img,
-                                        $phone,$latitude,$longitude,$img2,$img3,$video,$description,
-                                        $maps_link,$category,$internet,$security)
-                        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO trip (`name`,`price`,`direction`,`staying`,`access`,`tourism_type_id`,`img`,`phone`,`latitude`,`longitude`,`img2`,`img3`,`video`,`description`,`maps_link`,`category`,`internet`,`security`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $query = $pdo -> prepare($sql);
                 $query -> execute([ 
-                                    $name,$price,$direction,$staying,$tourism_type_id,$img,
+                                    $name,$price,$direction,$staying,$access,$tourism_type_id,$img,
                                     $phone,$latitude,$longitude,$img2,$img3,$video,$description,
                                     $maps_link,$category,$internet,$security
                                 ]);
-
-                header("Location:../../admin/trip/show.php");
             } 
             catch (Exception $e) {
                 die("Error: " . $e -> getMessage());
